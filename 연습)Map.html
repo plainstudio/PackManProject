@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Map 연습</title>
+ <style>
+ #stage{
+	width:480px;
+	height:480px;
+	background:dodgerblue;
+	margin:auto;
+ }
+ </style>
+<script>
+var stage;
+function init(){
+	stage=document.getElementById("stage");
+	createMap();
+}
+function createMap(){
+	for(var a=0;a<96;a++){
+		for(var i=0; i<96;i++){
+			var div=document.createElement("div");
+			div.style.width=3+"px";
+			div.style.height=3+"px";
+			div.style.border=1+"px solid red";
+			if ((a+1)%3==0 && (i+1)%3==0 && i>3 && a>3 && i<92 && a<92){
+				div.style.background="green";
+			}else{
+				div.style.background="pink";
+			}
+			div.style.float="left";
+			stage.appendChild(div);
+		}
+	}
+
+}
+addEventListener("load",function(){
+init();
+});
+</script>
+ </head>
+ <body>
+	<div id="stage"></div>
+ </body>
+</html>

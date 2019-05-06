@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>팩맨-1탄</title>
+ <style>
+ .wrapper{
+	width:1000px;
+	height:600px;
+	background:yellow;
+	position:relative;
+	margin:auto;
+ }
+ #stage{
+	width:600px;
+	height:600px;
+	background:dodgerblue;
+	position:relative;
+	float:left;
+ }
+ #modal{
+	width:300px;
+	height:300px;
+	background:black;
+	position:absolute;
+	left:150px;
+	top:150px;
+	//z-index:10;
+	display:none;
+	border-radius:5%;
+	border:5px solid blue;
+	font-size:20px;
+	text-align:center;
+	color:white;
+	padding-top:20px;
+ }
+ #info{
+	width:400px;
+	height:600px;
+	background:pink;
+	float:left;
+	text-align:center;
+ }
+.title_area{
+	width:100%;
+	height:80px;
+	font-size:30px;
+	text-align:center;
+	font-weight:bold;
+	background:skyblue;
+}
+.input_area{
+	width:100%;
+	height:35px;
+	background:#ccff66;
+}
+.input_area input{
+	font-size:20px;
+}
+.input_area button{
+	font-size:20px;
+}
+#user_Info{
+	width:100%;
+	height:100px;
+	background:green;
+}
+#rank_area{
+	width:100%;
+	height:250px;
+	background:#0099ff;
+}
+#btn_start{
+	width:100%;
+	height:50px;
+	background:#ff9966;
+	font-size:30px;
+	font-weight:bold;
+}
+.maker_info{
+	width:100%;
+	height:85px;
+	background:#0033ff;
+}
+
+ </style>
+<script src="./common.js"></script>
+<script src="./ObjectManager.js"></script>
+<script src="./Map1.js"></script>
+<script src="./Object.js"></script>
+<script src="./playerArray.js"></script>
+<script src="./Hero.js"></script>
+<script src="./Ball.js"></script>
+<script src="./Stone.js"></script>
+<script src="./Enemy.js"></script>
+<script src="./Item.js"></script>
+<script src="./Block.js"></script>
+
+<script>
+ var stage;
+ var info;
+ var user_Info;
+ var user_name;
+ var rank_area;
+ var btn_start;
+ var maker_info;
+ var user_num=0;
+ var modal;
+
+ var hero;
+ var ball;
+ var objectManager;
+ var obj=new Date();
+ var date;
+var score=0;
+var point=10;
+var topplayer=10;
+
+var flag=false;
+var prekey=0;
+var key;
+
+var gap=20;
+var stoneSize=5;
+var enemySize=20;
+var itemSize=20;
+var heroSize=20;
+var ballSize=10;
+var blockSize=10;
+var stoneNum=10;
+
+ function init(){
+	stage=document.getElementById("stage");
+	info=document.getElementById("info");
+	user_Info=document.getElementById("user_Info");
+	user_name=document.getElementById("user_name");
+	rank_area=document.getElementById("rank_area");
+	btn_start=document.getElementById("btn_start");
+	maker_info=document.getElementById("maker_info");
+	modal=document.getElementById("modal");
+
+	objectManager=new ObjectManager();
+	createHero();
+	createStone();
+	createEnemy();
+	createItem();
+	//createMap();
+	showRank();
+
+	btn_start.addEventListener("click",function(){
+		// hero.velX+=1;
+		flag=!flag;
+		if(flag==true){
+			btn_start.style.background="red";
+			btn_start.innerText="Pause";
+			play();
+		}
+		if(flag==false){
+			btn_start.style.background="#cccc33";
+			btn_start.innerText="▶";
+			pause();
+			
+		}
+	});
+	
+	setInfo();
+	gameLoop();
+}
+/*
+function createMap(){
+	for(var a=0;a<Map1.length;a++){
+		for(var i=0;i<Map1[a].length;i++){  
+			if(Map1[a][i]==1){
+
+				var block=new Block("BLOCK",stage,"./res/block.png",(i*blockSize),(a*blockSize),blockSize,blockSize,"","","");
+				objectManager.addObject(block);
+				
+	
+			}else if(Map1[a][i]==0){
+				var block=new Block("BLOCK",stage,"./res/e4.png",(i*blockSize),(a*blockSize),blockSize,blockSize,"","","");
+				
+			}
+			
+		}
+	}
+}*/
+ function createHero(){
+	hero=new Hero("HERO",stage,"./res/Hero1.png",100,200,heroSize,heroSize,0,0,"");
+	objectManager.addObject(hero);
+ }
+ function createBall(){
+	ball=new Ball("BALL",stage,"./ball.png",hero.x+heroSize,hero.y,ballSize,ballSize,8,0,"");
+	objectManager.addObject(ball);
+ }
+ function createStone(){
+	 for(var i=0; i<10;i++){
+		var stone=new	Stone("STONE",stage,"",200+(i*(stoneSize+gap)),300,stoneSize,stoneSize,0,0,"white");
+		objectManager.addObject(stone);
+	}
+ }
+ function createEnemy(){
+	 for(var i=0;i<4;i++){
+		var valX=Math.random();
+		var enemy=new Enemy("ENEMY",stage,"./res/e"+(i+1)+".png",300+(i*enemySize),400,enemySize,enemySize,valX,0,"");
+		objectManager.addObject(enemy);
+	}
+ }
+  function createItem(){
+	 for(var i=0;i<4;i++){
+		var item=new Item("ITEM",stage,"./res/item"+i+".png",500+(i*itemSize),200,itemSize,itemSize,0,0,"");
+		objectManager.addObject(item);
+	}
+ }
+
+
+ function joystick(){
+	key=event.keyCode;
+		if(flag==true){
+			play();
+		}
+		
+ }
+ function play(){
+
+	if(key==32){
+		if(prekey==37){
+			ball=new Ball("BALL",stage,"./res/ball.png",hero.x+heroSize,hero.y,ballSize,ballSize,-8,0,"");
+			objectManager.addObject(ball);
+		}else if(prekey==39){
+			ball=new Ball("BALL",stage,"./res/ball.png",hero.x+heroSize,hero.y,ballSize,ballSize,8,0,"");
+			objectManager.addObject(ball);
+		}else if(prekey==38){
+			ball=new Ball("BALL",stage,"./res/ball.png",hero.x+heroSize,hero.y,ballSize,ballSize,0,-8,"");
+			objectManager.addObject(ball);
+		}else if(prekey==40){
+			ball=new Ball("BALL",stage,"./res/ball.png",hero.x+heroSize,hero.y,ballSize,ballSize,0,8,"");
+			objectManager.addObject(ball);
+		}
+	}
+
+	switch(key){
+			case 37:prekey=key;hero.velX=-1;hero.velY=0;hero.img.src="./res/hero0.png";break; //좌
+			case 39:prekey=key;hero.velX=1;hero.velY=0;hero.img.src="./res/hero1.png";break; //우
+			case 38:prekey=key;hero.velY=-1;hero.velX=0;hero.img.src="./res/hero3.png";break; //위
+			case 40:prekey=key;hero.velY=1;hero.velX=0;hero.img.src="./res/hero4.png";break; //아래
+	}
+	
+ }
+ function pause(){
+		hero.velX=0;
+		hero.velY=0;
+ }
+
+ //게임 정보를 셋팅한다
+ function setInfo(){
+	var str="";
+	date=obj.getFullYear()+"."+(obj.getMonth()+1)+"."+obj.getDate();
+	str+="==========  User Info ========== "+"<br/>"; 
+	str+="User Number: "+user_num+"&nbsp &nbsp &nbsp Date: "+date+"<br/>";
+	str+="User Name: "+user_name.value+"&nbsp &nbsp Score: "+score+"점 <br/>";
+	str+="=========================== "+"<br/>";
+	
+	user_Info.innerHTML=str;
+
+	var stc="";
+	stc+="copyrightⓒ kwonjiyoung 2018 <br/>";
+	stc+="안녕하세요. 처음 만들어본 팩맨 게임입니다^^<br>";
+	stc+="재밌게 즐겨주세요~~~~~**";
+	maker_info.innerHTML=stc;
+ }
+ function regist(){
+	user_num++;
+	
+	
+	playerArray.push({
+		"number":user_num,
+		"name":user_name.value,
+		"score":score,
+		"date":date
+	});
+	compRank();
+	setInfo();
+ }
+ function compRank(){
+	var tmp;
+	if(playerArray.length>1){
+			for(var i=playerArray.length-1;i>=1;i--){
+				if(playerArray[i-1]<=playerArray[i]){
+					tmp=playerArray[i-1];
+					playerArray[i-1]=playerArray[i];
+					playerArray[i]=tmp;
+				}
+			}
+	}
+ 
+ }
+//json 데이터에서 상위 20명 뽑아서 보여주기
+ function showRank(){
+	var str="";
+		str+="<table width='100%'  >";
+		str+="<tr >";
+			str+="<td colspan=\"5\">============ top 10 Player ============</td>";
+		str+="</tr>";
+		str+="<tr>";
+			str+="<td>순위</td>";
+			str+="<td>유저번호</td>";
+			str+="<td>아이디</td>";
+			str+="<td>점수</td>";
+			str+="<td>날짜</td>";
+		str+="</tr>";
+
+		for(var i=0; i<8;i++){
+			if(i>=playerArray.length)break;
+			str+="<tr>";
+				str+="<td>"+(i+1)+"</td>";
+				str+="<td>"+playerArray[i].number+"</td>";
+				str+="<td>"+playerArray[i].name+"</td>";
+				str+="<td>"+playerArray[i].score+"</td>";
+				str+="<td>"+playerArray[i].date+"</td>";
+			str+="</tr>";
+		}
+			str+="</table>";
+		
+		rank_area.innerHTML=str;
+	
+ }
+ function gameClear(){
+	modal.style.display="block";
+	
+	var str="";
+	str+="Game Over!!!!"+"<br/>";
+	str+="===== User Info ===== "+"<br/>"; 
+	str+="Date: "+date+"<br/>";
+	str+="User Number: "+user_num+"<br/>";
+	str+="User Name: "+user_name.value+"<br/>";
+	str+="Score: "+score+"점 <br/>";
+	
+	modal.innerHTML=str;
+
+	compRank();
+	showRank();
+
+	/*if(){
+		modal.innerText="Clear";
+	}else{
+		modal.innerText="Game Over";
+	}*/
+
+	
+
+ }
+ //남은 스톤 갯수 체크
+ function stoneCheck(){
+	/*for(var i=0;i<objectManager.objectArray.length;i++){
+		if(objectManager.objectArray[i].type=="STONE"){
+			stoneNum++;
+		}
+	}*/
+	if(stoneNum<=0){
+		pause();
+		gameClear();
+	}
+ }
+ /*function moveEnemy(){
+
+		 for(var i=0; i<objectManager.objectArray.length;i++){
+			 if(objectManager.objectArray[i])
+			var valX=getRandomByRange(1, 11);
+			var valY=getRandomByRange(1, 11);
+			ballArray[i].move(valX,valY);
+		}
+ }*/
+ function gameLoop(){
+	stoneCheck();
+	objectManager.tick();
+	objectManager.render();
+	setTimeout("gameLoop()",10);
+ }
+ addEventListener("load",function(){
+	init();
+ });
+ </script>
+ </head>
+ <body onKeyDown="joystick()">
+	<div class="wrapper">
+		<div id="stage">
+
+		</div>	
+		<div id="info">
+			<div class="title_area">Pack Man Game</div>
+			<div class="input_area">
+				<input id="user_name" type="text" placeholder="유저 이름을 입력하세요."/>
+				<button onClick="regist()">등록</button>
+			</div>
+			<div id="user_Info"></div>
+			<div id="rank_area"></div>
+			<div id="btn_start">Start</div>
+			<div id="maker_info"></div>
+		</div>	
+		<div id="modal"></div>
+	</div>
+				 
+ </body>
+</html>
