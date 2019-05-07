@@ -1,12 +1,7 @@
 # PackManProject
 [ javascript ] 팩맨 게임 개인 프로젝트
 
-<img width="50%" src="https://postfiles.pstatic.net/MjAxOTA1MDZfMjQ2/MDAxNTU3MTIxNjM2ODY3.tYIAyDzRQJm3Ods4EFt_L-YK5x7cBoVnnmL9IMw1f4Ig.dVzW6N5GQ_2n92fb9eWe_8GkdReXzCtyv0a3U5BX7fUg.PNG.kwjing93/image.png?type=w966">
-
-<img width="50%" src="https://postfiles.pstatic.net/MjAxOTA1MDZfMjgx/MDAxNTU3MTIyMTQzNTU3.9pQinnEkJvbVqGnCl60MFuOv7O_aadgq0ssTjhKG36og.GgOBrW4OveR5TO8Fdm7FZtluu6fIT4jenPrNzyDR5F8g.PNG.kwjing93/image.png?type=w966">
-
-<img width="50%" src="https://postfiles.pstatic.net/MjAxOTA1MDZfNjAg/MDAxNTU3MTIyMzU1ODcz.E7ffFeV-yFSND9OHS1_WbN7_3P4aCohVt4XZ_a7uL2kg._438G7eaNLXT8Ak_u6JiCaM2DA7xwhbfnB0ZB1kyQ9og.PNG.kwjing93/image.png?type=w966">
-
-<img width="50%" src="https://postfiles.pstatic.net/MjAxOTA1MDZfMTUg/MDAxNTU3MTIyMjc0NjY2.vNwnc5BH-9a4t_BsITW35vktcvSwoUmgBighbDlZt9Ag.EPCGjDf08OUHSbzaMuyANExRhcZ65354uAAGGOhTMyUg.PNG.kwjing93/image.png?type=w966">
-
-
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMjA1/MDAxNTU3MjQ4NzA0MDA4.ggJmPe1iIojOusQv-MW8bRGe6BLHPis0rPn3JtGq_Kwg.nY0JosOP7wCAaILDFGBLNDKg2cW8CR3KYzJcgxLXuQ4g.PNG.kwjing93/PACKMAN1.png?type=w966">
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMzkg/MDAxNTU3MjQ4NzA1OTA3.iXJjpCmZVkuy36NO3bI_JX0l1PbiG00xFx45Qtr3AcMg.lxji8kn2CKjECAQfQllAICkJps1X5_VkBEPxDr2ja1og.PNG.kwjing93/PACKMAN2.png?type=w966">
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfODEg/MDAxNTU3MjQ4NzA3MjMw.XyGcy4JQ_HPLFmTPt2dBB2sKqwfGKzsCuyJn_ImAbaEg.PAsrNqsNCdUogUYTD9c2PajrBEe6tkg4s_9UB9CBS1og.PNG.kwjing93/PACKMAN3.png?type=w966">
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMTc3/MDAxNTU3MjQ4NzA4MzIy.FxNnwB8L7SbAukauIxLOSbtecyt2rWrB9gczBEjy7usg.6cWJwTVd8AE528ZPTdoFpsEV-4NRna6ieFZnu8Ka8gEg.PNG.kwjing93/PACKMAN4.png?type=w966">
