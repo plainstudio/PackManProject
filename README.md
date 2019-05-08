@@ -7,11 +7,11 @@
 <img src="https://postfiles.pstatic.net/MjAxOTA1MDlfMTYg/MDAxNTU3MzI4OTQ3MTYw.uma9ZVs-WzMaCZD7Wh0mALyI3jTUnT_kDlwcv7AS8aEg.bDwaiMdHeKnQDLIAnBmZoQ5QxQZtrWnB4hnkwEkPYXUg.PNG.kwjing93/PACKMAN2-1.png?type=w966">
 
 [ 디자인 ]
-- modal 창 사용
-- map.js 파일에 메서드를 정의하여 맵을 화면에 출력
+- map.js 파일에 메서드를 정의하여 맵을 화면에 출력 (1)
+- modal 창 사용 (2)
 
 [ 객체 처리 ]
-- objectManager 파일을 정의하여 화면에 등장할 객체들의 부착, 삭제를 관리
+- objectManager 파일을 정의하여 화면에 등장할 객체들의 부착, 삭제를 관리 (3)
 - 객체의 생성자를 통해 객체의 초기값을 주입하여 설정
 - switch case문을 사용해 키보드 값에 따라 캐릭터의 이동을 설정
 
@@ -23,11 +23,11 @@
 
 
 [ 유저 처리 ]
-- json 객체에 유저의 정보를 저장하여 배열에 넣어 활용
+- json 객체에 유저의 정보를 저장하여 배열에 넣어 활용 (1)
 
 [ 처리 ]
 - javascript 파일의 외부 참조 <script src="">
-- flag 값을 활용하여 흑백논리에 해당하는 코드에 적용
+- flag 값을 활용하여 흑백논리에 해당하는 코드에 적용 (2)
 - onKeyDown, onClick 등의 이벤트 속성을 활용
 - EventListener, init(), 익명함수를 활용해 문서가 로드된 이후 javascript코드의 실행을 유도
 
