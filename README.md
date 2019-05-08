@@ -28,6 +28,7 @@
 - EventListener, init(), 익명함수를 활용해 문서가 로드된 이후 javascript코드의 실행을 유도
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MDhfODEg/MDAxNTU3MjQ4NzA3MjMw.XyGcy4JQ_HPLFmTPt2dBB2sKqwfGKzsCuyJn_ImAbaEg.PAsrNqsNCdUogUYTD9c2PajrBEe6tkg4s_9UB9CBS1og.PNG.kwjing93/PACKMAN3.png?type=w966">
+
 [ 주요 코드 ]
 
 1) 이중 배열을 활용한 맵 생성
@@ -37,6 +38,7 @@
 
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMTc3/MDAxNTU3MjQ4NzA4MzIy.FxNnwB8L7SbAukauIxLOSbtecyt2rWrB9gczBEjy7usg.6cWJwTVd8AE528ZPTdoFpsEV-4NRna6ieFZnu8Ka8gEg.PNG.kwjing93/PACKMAN4.png?type=w966">
+
 [ 센서를 활용한 충돌검사 ]
 
 - common.js를 정의하여 충돌체크 메서드 사용
