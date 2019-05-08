@@ -1,9 +1,10 @@
 # PackManProject
 [ javascript ] 팩맨 게임 개인 프로젝트
 
-<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMjA1/MDAxNTU3MjQ4NzA0MDA4.ggJmPe1iIojOusQv-MW8bRGe6BLHPis0rPn3JtGq_Kwg.nY0JosOP7wCAaILDFGBLNDKg2cW8CR3KYzJcgxLXuQ4g.PNG.kwjing93/PACKMAN1.png?type=w966">
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDlfODAg/MDAxNTU3MzI4OTQ1NzQz.3M3-hgyLE94d3KrYOU44OpwdIt2VtZD92SMX74mK_OEg.mzkkn2rhS9ZG6eT9bU0aqTK4IpCzu_fdxIVXDdRMSnkg.PNG.kwjing93/PACKMAN1.png?type=w966">
 
-<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMzkg/MDAxNTU3MjQ4NzA1OTA3.iXJjpCmZVkuy36NO3bI_JX0l1PbiG00xFx45Qtr3AcMg.lxji8kn2CKjECAQfQllAICkJps1X5_VkBEPxDr2ja1og.PNG.kwjing93/PACKMAN2.png?type=w966">
+
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDlfMTYg/MDAxNTU3MzI4OTQ3MTYw.uma9ZVs-WzMaCZD7Wh0mALyI3jTUnT_kDlwcv7AS8aEg.bDwaiMdHeKnQDLIAnBmZoQ5QxQZtrWnB4hnkwEkPYXUg.PNG.kwjing93/PACKMAN2-1.png?type=w966">
 
 [ 디자인 ]
 - modal 창 사용
@@ -18,6 +19,9 @@
 - setTimeout 메서드로 gameLoop를 구현하여 사용
 - tick, render 메서드를 사용해 객체들의 움직임과 화면 구현을 관리
 
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDlfMjk3/MDAxNTU3MzI4OTQ5NTA4.jxIL8OI035VG00-yI_D4F0-Cn_XhMmxPamUAMdhS3-og.A8aux9pTaQC4nt7F8uVdgf3A4DR8mB_wiRsY-0K6d7wg.PNG.kwjing93/PACKMAN2-2.png?type=w966">
+
+
 [ 유저 처리 ]
 - json 객체에 유저의 정보를 저장하여 배열에 넣어 활용
 
@@ -27,7 +31,7 @@
 - onKeyDown, onClick 등의 이벤트 속성을 활용
 - EventListener, init(), 익명함수를 활용해 문서가 로드된 이후 javascript코드의 실행을 유도
 
-<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfODEg/MDAxNTU3MjQ4NzA3MjMw.XyGcy4JQ_HPLFmTPt2dBB2sKqwfGKzsCuyJn_ImAbaEg.PAsrNqsNCdUogUYTD9c2PajrBEe6tkg4s_9UB9CBS1og.PNG.kwjing93/PACKMAN3.png?type=w966">
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDlfMjAx/MDAxNTU3MzI4OTUxNzkx.b7TvbojLec5GK0T9nn6dNtOXj6dCIMJwTtSS4aV0wPsg.RWLDaKacFHBOQN-8pPXKDgWRbkYJC77_FDQywi12UK4g.PNG.kwjing93/PACKMAN3-1.png?type=w966">
 
 [ 주요 코드 ]
 
@@ -37,7 +41,7 @@
 
 
 
-<img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMTc3/MDAxNTU3MjQ4NzA4MzIy.FxNnwB8L7SbAukauIxLOSbtecyt2rWrB9gczBEjy7usg.6cWJwTVd8AE528ZPTdoFpsEV-4NRna6ieFZnu8Ka8gEg.PNG.kwjing93/PACKMAN4.png?type=w966">
+<img src="https://postfiles.pstatic.net/MjAxOTA1MDlfMjY1/MDAxNTU3MzI4OTUzNDYx.i16bP_zra8i8hO3IRmd1F8ab9tVXxl-IaUCFms0fRBIg.5Xh5h9XlS4C3Nt-HNyBhK6BeX0tWDi35ZjBONfwHs3og.PNG.kwjing93/PACKMAN4.png?type=w966">
 
 [ 센서를 활용한 충돌검사 ]
 
