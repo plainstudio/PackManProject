@@ -17,7 +17,7 @@
 [ 유저 처리 ]
 - json 객체에 유저의 정보를 저장하여 배열에 넣어 활용
 
-[게임 프레임웍]
+[ 게임 프레임웍 ]
 - setTimeout 메서드로 gameLoop를 구현하여 사용
 - tick, render 메서드를 사용해 객체들의 움직임과 화면 구현을 관리
 
@@ -29,6 +29,7 @@
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MDhfODEg/MDAxNTU3MjQ4NzA3MjMw.XyGcy4JQ_HPLFmTPt2dBB2sKqwfGKzsCuyJn_ImAbaEg.PAsrNqsNCdUogUYTD9c2PajrBEe6tkg4s_9UB9CBS1og.PNG.kwjing93/PACKMAN3.png?type=w966">
 [ 주요 코드 ]
+
 1) 이중 배열을 활용한 맵 생성
 2) 맵 블록 위에 Math객체의 random() 메서드를 사용하여 아이템 생성 
 3) JSON 객체에 유저정보 저장
@@ -37,6 +38,7 @@
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MDhfMTc3/MDAxNTU3MjQ4NzA4MzIy.FxNnwB8L7SbAukauIxLOSbtecyt2rWrB9gczBEjy7usg.6cWJwTVd8AE528ZPTdoFpsEV-4NRna6ieFZnu8Ka8gEg.PNG.kwjing93/PACKMAN4.png?type=w966">
 [ 센서를 활용한 충돌검사 ]
+
 - common.js를 정의하여 충돌체크 메서드 사용
 - sensor.js를 정의하여 캐릭터 객체 상하좌우 부착하여 속도와 방향값 변경에 사용
 
