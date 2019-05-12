@@ -24,7 +24,7 @@
 
 
 [ 유저 처리 ]
-- 유저에 대한 데이터베이스를 JSON 객체와 배열을 이용하여 관리
+- (1) 유저에 대한 데이터베이스를 JSON 객체와 배열을 이용하여 관리
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MTJfOTkg/MDAxNTU3NjQ0NTU3NjUy.udTjnLoYyqTupQ4YBlaZ2Ow00L1HcmYgosUXk4595h8g.60-btkIVjf3-pVmEZlKKggYxynvBYxfKqn4W4ZPYfOMg.PNG.kwjing93/PACKMAN4(0512).png?type=w966">
 
