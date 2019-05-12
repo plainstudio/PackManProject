@@ -29,10 +29,9 @@
 <img src="https://postfiles.pstatic.net/MjAxOTA1MTJfOTkg/MDAxNTU3NjQ0NTU3NjUy.udTjnLoYyqTupQ4YBlaZ2Ow00L1HcmYgosUXk4595h8g.60-btkIVjf3-pVmEZlKKggYxynvBYxfKqn4W4ZPYfOMg.PNG.kwjing93/PACKMAN4(0512).png?type=w966">
 
 
-[ 주요 코드 ]
 
-- (1) 게임스테이지 정보를 가진 2차원 배열을 map.js로 정의하여 유지보수성 고려
-- (2) 맵 블록 위에 Math객체의 random() 메서드를 사용하여 아이템 생성 
+- (2) 게임스테이지 정보를 가진 2차원 배열을 map.js로 정의하여 유지보수성 고려
+- (3) 맵 블록 위에 Math객체의 random() 메서드를 사용하여 아이템 생성 
 
 
 
